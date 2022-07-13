@@ -4,7 +4,7 @@
   align-items: center;
   border-bottom: 2px solid #8a2b06;
   padding: 1rem 0;
-  margin: 1rem 0;
+  /* margin: 1rem 0; unnecessary margin top and bot added by max*/
 }
 
 .cart-item h2 {

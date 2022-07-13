@@ -22,10 +22,10 @@ const Checkout = props => {
         const entSt = stInputRef.current.value;
         const entPo = poInputRef.current.value;
         const entCi = ciInputRef.current.value;
-        const entNisValid = isEmpty(entN);
-        const entStisValid = isEmpty(entSt);
-        const entPoisValid = isEmpty(entPo);
-        const entCiisValid = isFiveChars(entCi);
+        const entNisValid = !isEmpty(entN);
+        const entStisValid = !isEmpty(entSt);
+        const entPoisValid = isFiveChars(entPo);
+        const entCiisValid = !isEmpty(entCi);
         setFormValidity({n:entNisValid, st:entStisValid, po:entPoisValid, ci:entCiisValid })
         const formIsValid = entNisValid
          && entStisValid
@@ -56,7 +56,7 @@ const Checkout = props => {
         <div className={`${classes.control} ${formValidity.po?'':classes.invalid}`}>
             <label htmlFor="postal">Postal Code</label>
             <input type="text" id="postal" ref={poInputRef}></input>
-            { !formValidity.po && <p> Please enter a valid postal! </p>}
+            { !formValidity.po && <p> Please enter a valid postal! Please enter 5 char! </p>}
         </div>
         <div className={`${classes.control} ${formValidity.ci?'':classes.invalid}`}>
             <label htmlFor="city">City</label>
