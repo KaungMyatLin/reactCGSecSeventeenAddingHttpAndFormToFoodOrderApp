@@ -64,7 +64,7 @@ const Checkout = props => {
             { !formValidity.ci && <p> Please enter a valid city! </p>}
         </div>
         <div className={classes.actions}>
-            <button type="button" onClick={props.onClose}>Cancel</button>
+            <button type="button" onClick={props.onCancel}>Cancel</button>
             <button onClick={confirmHandler}>Confirm</button>
         </div>
     </form>
