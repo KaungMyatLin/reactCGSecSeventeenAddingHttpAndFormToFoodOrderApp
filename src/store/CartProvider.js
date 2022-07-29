@@ -15,7 +15,7 @@ const cartReducer = (state, action) => {
     if (existingItm) {
       const updatedItem = { ...existingItm, amount: existingItm.amount + 1 };
       updatedItems[existingItmIdx] = updatedItem;
-      updatedTotalAmount = existingItm.price * (existingItm.amount + 1);
+      updatedTotalAmount = state.totalAmount + (existingItm.price * (existingItm.amount + 1));
     } else {
       updatedItems.push(action.item) // new array as well.
       updatedTotalAmount = state.totalAmount + action.item.price * 1;
@@ -34,7 +34,7 @@ const cartReducer = (state, action) => {
     if (existingItm.amount !== 1) {
       const updatedItem = { ...existingItm, amount: existingItm.amount - 1 };
       updatedItems[existingItmIdx] = updatedItem;
-      updatedTotalAmount = existingItm.price * (existingItm.amount - 1);
+      updatedTotalAmount = state.totalAmount + (existingItm.price * (existingItm.amount - 1));
     } else {
       updatedTotalAmount = state.totalAmount - existingItm.price; // this line must come before removing existinItm.
       updatedItems = state.items.filter(item => item.id !== action.id);
