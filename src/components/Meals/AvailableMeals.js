@@ -28,6 +28,11 @@ const AvailableMeals = () => {
       setIsLoading(false);
     }
 
+    // async function fetchData() {
+      //   const response = await fetch( '');
+      //   const responseData = await response.json();
+      // }
+
     // below code has very hard to find bug. Throwing Error inside promise causes to reject().
     // we cant use trycatch() to warp it unless we also await fetchMeal() turning it into async function
     // try{
